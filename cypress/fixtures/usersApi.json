@@ -1,0 +1,14 @@
+{
+    "newUser": {
+        "username": "Pepitolos",
+        "password": "pepito.100"
+    },
+    "userExisting": {
+        "username": "Christian",
+        "password": "chris10"
+    },
+    "userIncorrect": {
+        "username": "Pepitos",
+        "password": "pepito10"
+    }
+}
