@@ -1,0 +1,11 @@
+Conclusiones - Hallazgos 
+
+Pruebas E2E
+Al automatizar el flujo de compras con Cypress se a demostrado que es una solución eficiente y rápida para garantizar la estabilidad de la compra, se puede mejorar el flujo implementado Cucumber para los casos de prueba y obtener reportería.
+
+Finalmente como hallazgos puedo decir que el flujo respondio de la manera esperada, las validaciones se realizarón rápidas y precisas desde la autenticación, la selección de productos, el llenado del formulario y finalmente obteniendo el mensaje de confirmación de la compra, la automatización.
+
+Prueba API
+Se puede observar que la automatización de la API en Cypress garantiza la funcionalidad y estabilidad de los endpoint, cabe mencionar que es mi primera automatización en Cypress de API permitiéndome tener una experiencia muy agradable, ya que las automatizaciones que he realizado han sido con Karate.
+
+Como hallazgo el flujo respondio satisfactoriamente con las valdiaciones pedidas en el documentos, lo que si se tuvo pequeños inconvenientes con las respuestas de las peticiones.
