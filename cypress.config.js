@@ -2,10 +2,9 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
     e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-        },
-
-        baseUrl: "https://api.demoblaze.com",
+        baseUrl: "https://www.saucedemo.com",
+        env: {
+            apiUrl: "https://api.demoblaze.com"
+        }
     },
 });

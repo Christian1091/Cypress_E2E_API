@@ -1,5 +1,9 @@
 class ProductsPage {
 
+    produSuccess() {
+        cy.url().should('include', '/inventory.html');
+    }
+
     addProduct(nameProduct) {
         cy.contains(nameProduct).should('be.visible').click();
         cy.get('#add-to-cart').should('be.visible').click();
@@ -8,7 +12,7 @@ class ProductsPage {
 
     addTwoProducts(products) {
         products.forEach(product => this.addProduct(product));
-        cy.log(`Se agrego el producto: ${ products }`);
+        cy.log(`Agregar dos productos al carrito: ${ products }`);
     }
 
     cartView() {

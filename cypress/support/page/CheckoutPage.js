@@ -5,6 +5,8 @@ class CheckoutPage {
         cy.get('#last-name').type(lastName);
         cy.get('#postal-code').type(postalCode);
         cy.get('#continue').click();
+
+        cy.log(`Completar el formulario de compra => ${firstName, lastName, postalCode}`);
     }
 
     finish() {

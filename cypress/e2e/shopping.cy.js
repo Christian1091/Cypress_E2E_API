@@ -12,27 +12,34 @@ describe('Realizar una prueba funcional automatizada (Prueba E2E) de un flujo de
     const checkoutPage = new CheckoutPage();
     const confirmationPage = new ConfirmationPage();
 
-    before(' Autenticarse con el usuario: standard_user y password: secret_sauce', () => {
-        loginPage.visit();
-        loginPage.login('standard_user', 'secret_sauce');
-        loginPage.loginSuccess();
+    before(() => {
+        cy.fixture("loginData").then((loginData) => {
+            //Ingresamos saucedemo
+            loginPage.visit();
+
+            //Autenticarse con el usuario
+            loginPage.login(loginData.username, loginData.password);
+            loginPage.loginSuccess();
+        });
     })
 
-    it('Flujo de compras', () => {
-        productsPage.addTwoProducts(['Bike Light', 'Fleece Jacket']);
-        productsPage.cartView();
+    it('Prueba funcional automatizada (Prueba E2E)', () => {
 
-        cartViewPage.checkout();
+        cy.fixture("data").then((data) => {
 
-        checkoutPage.informationForm('Juan', 'Perez', '0028');
-        checkoutPage.finish();
+            //Agregar dos productos al carrito
+            productsPage.addTwoProducts(['Bike Light', 'Fleece Jacket']);
+            productsPage.cartView();
 
-        confirmationPage.verifyMessageSuccess();
-    })
+            //Visualizar el carrito
+            cartViewPage.checkout();
 
-    /*it('Visualizar en el carrito', () => {
-        cartViewPage.checkout();
+            //Completar el formulario de compra
+            checkoutPage.informationForm(data.firstName, data.lastName, data.postalCode);
+            checkoutPage.finish();
 
-    })*/
-
+            //Finalizar la compra hasta la confirmación: “THANK YOU FOR YOUR ORDER”
+            confirmationPage.verifyMessageSuccess();
+        })
+    });
 });

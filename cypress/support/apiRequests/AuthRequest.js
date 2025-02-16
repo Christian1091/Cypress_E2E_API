@@ -3,7 +3,7 @@ class AuthRequest {
     singUp(username, password) {
         return cy.request({
             method: "POST",
-            url: "/signup",
+            url: `${Cypress.env('apiUrl')}/signup`,
             body: { username, password },
             statusCode: false
         });
@@ -12,7 +12,7 @@ class AuthRequest {
     login(username, password) {
         return cy.request({
             method: "POST",
-            url: "/login",
+            url: `${Cypress.env('apiUrl')}/login`,
             body: { username, password },
             statusCode: false
         });
